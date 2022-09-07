@@ -24,11 +24,10 @@
       :class="{
         active: article.author.following
       }"
-      @click="onFollow"
     >
       <i class="ion-plus-round"></i>
       &nbsp;
-      {{!article.author.following ? 'Follow Gerome' : 'Unfollow Gerome'}} <span class="counter"></span>
+      Follow Eric Simons <span class="counter">(10)</span>
     </button>
     &nbsp;&nbsp;
     <button
@@ -36,11 +35,10 @@
       :class="{
         active: article.favorited
       }"
-      @click="onFavorite()"
     >
       <i class="ion-heart"></i>
       &nbsp;
-      {{ !article.favorited ? 'Favorite Article' : 'Unfavorite Article' }} <span class="counter">({{ article.favoritesCount }})</span>
+      Favorite Post <span class="counter">(29)</span>
     </button>
   </div>
 </template>
@@ -52,14 +50,6 @@ export default {
     article: {
       type: Object,
       required: true
-    }
-  },
-  methods: {
-    onFavorite () {
-      this.$emit('onFavorite')
-    },
-    async onFollow () {
-      this.$emit('onFollow')
     }
   }
 }
